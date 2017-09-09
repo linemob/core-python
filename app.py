@@ -12,9 +12,8 @@ from linebot.models import (
 from src.receiver import Receiver
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(
-    'xJBvxhncO6zH7t/Hsynzv9Dq6ODqrc+lMZb3ZzcObJV6fPSttweWZ6qAvNWrQ0aJ6GPaUP5JOBHcbRctlLKDd6NRo65Dp81luK57sQ33sB2gVaKlAQ8I6rGMs0/uLuztQIku+cF70s5ZomBKClrR/gdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('9533878dc5a95ba1077d0e3555013b25')
+line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
+handler = WebhookHandler('YOUR_CHANNEL_SECRET')
 
 
 @app.route('/')
@@ -42,7 +41,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print ('receiver here!')
+    print('receiver here!')
     receiver = Receiver(event)
 
 

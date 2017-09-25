@@ -11,7 +11,7 @@ class ImagemapSendMessageMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == 'command9'):
-            command.set_message({'base_url': 'https://i.pinimg.com/736x/48/bd/3f/48bd3f6e928d7cb4b8d499cb0f96b8a8--despicable-minions-funny-minion.jpg',
+            command.set_message({'base_url': 'https://www.google.co.th/',
                                  'alt_text': 'this is an imagemap',
                                  'base_size': BaseSize(height=1040, width=1040),
                                  'actions': [

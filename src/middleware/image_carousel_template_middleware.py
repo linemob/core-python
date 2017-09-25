@@ -13,8 +13,8 @@ class ImageCarouselTemplateMiddleware():
 
     def execute(self, command):
         if(command.get_command() == 'command8'):
-            command.set_message({'alt_text'='ImageCarousel template',
-                                 'template'=ImageCarouselTemplate(
+            command.set_message({'alt_text': 'ImageCarousel template',
+                                 'template': ImageCarouselTemplate(
                                      columns=[
                                          ImageCarouselColumn(
                                              image_url='https://i.pinimg.com/736x/48/bd/3f/48bd3f6e928d7cb4b8d499cb0f96b8a8--despicable-minions-funny-minion.jpg',

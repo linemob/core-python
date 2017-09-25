@@ -4,6 +4,7 @@ class Command():
         self.event = event
         self.command = command
         self.template = template
+        self.message = None
 
     def set_command(selt, command):
         self.command = command
@@ -16,3 +17,9 @@ class Command():
 
     def get_template(self):
         return self.template
+
+    def set_message(self, message):
+        self.message = message
+
+    def get_message(self):
+        return self.message

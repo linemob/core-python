@@ -12,14 +12,12 @@ from linebot.models import (
 from src.receiver import Receiver
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+
+handler = WebhookHandler('cc19d3de5e1f7201cdbff7f0e8dfbf3e')
 
 
 @app.route('/')
 def index():
-    line_bot_api.push_message(
-        'U931873f839d5c043513c54fceebddb58', TextSendMessage(text='Hello World!'))
     return "<h1>Hello I'm fine!</h1>"
 
 

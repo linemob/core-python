@@ -1,15 +1,13 @@
 from linebot.models import (
     ButtonsTemplate, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
 )
+from .middleware import Middleware
 
 
-class ButtonTemplateMiddleware():
+class ButtonTemplateMiddleware(Middleware):
 
     def __init__(self):
-        self.next = True
-
-    def next(self):
-        return self.next
+        self.do_next = True
 
     def execute(self, command):
         if(command.get_command() == 'command6'):

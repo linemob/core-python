@@ -1,15 +1,13 @@
 from linebot.models import (
     BaseSize, URIImagemapAction, MessageImagemapAction, ImagemapArea
 )
+from .middleware import Middleware
 
 
-class ImagemapSendMessageMiddleware():
+class ImagemapSendMessageMiddleware(Middleware):
 
     def __init__(self):
-        self.next = True
-
-    def next(self):
-        return self.next
+        self.do_next = True
 
     def execute(self):
         if(command.get_command() == 'command9'):

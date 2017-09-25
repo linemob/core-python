@@ -1,10 +1,10 @@
-class HelloMiddleware():
+from .middleware import Middleware
+
+
+class HelloMiddleware(Middleware):
 
     def __init__(self):
-        self.next = True
-
-    def next(self):
-        return self.next
+        self.do_next = True
 
     def execute(self, command):
         if(command.get_command() == 'command1'):

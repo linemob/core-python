@@ -1,7 +1,7 @@
 class HelloMiddleware():
 
     def __init__(self):
-		self.next = True
+        self.next = True
 
     def next(self):
         return self.next

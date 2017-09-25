@@ -1,5 +1,5 @@
 from linebot.models import (
-    CarouselTemplate, CarouselColumn, ConfirmTemplate
+    CarouselTemplate, CarouselColumn, ConfirmTemplate, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
 )
 from .middleware import Middleware
 

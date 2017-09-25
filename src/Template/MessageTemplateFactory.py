@@ -19,6 +19,8 @@ class MessageTemplateFactory():
             self.template = StickerMessage(self.command).get()
         elif self.command.get_template() == 'TemplateMessage':
             self.template = TemplateMessage(self.command).get()
+        elif self.command.get_template() == 'ImagemapMessage':
+            self.template = TemplateMessage(self.command).get()
 
     def get(self):
         return self.template

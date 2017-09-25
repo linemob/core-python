@@ -25,12 +25,10 @@ class CommandBus():
         self.add(CarouselTemplateMiddleware())
         self.add(ConfirmTemplateMiddleware())
         self.add(DefaultMessageMiddleware())
-       
         self.add(ImageMiddleware())
         self.add(LocationMessageMiddleware())
         self.add(StickerMessageMiddleware())
         self.add(ImagemapSendMessageMiddleware())
-
 
     def add(self, middleware):
         self.middleware.append(middleware)

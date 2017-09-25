@@ -47,8 +47,7 @@ class CommandRegistry():
         elif text == '7':
             self.command = Command(self.event, 'command7', 'TemplateMessage')
         elif text == '8':
-            self.command = Command(
-                self.event, 'command8', 'TemplateMessage')
+            pass
         elif text == '9':
             self.command = Command(
                 self.event, 'command9', 'TemplateMessage')

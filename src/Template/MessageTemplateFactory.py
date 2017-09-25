@@ -9,7 +9,7 @@ class MessageTemplateFactory():
 
     def __init__(self, command):
         self.command = command
-        if self.command.get_template() == 'TextTemplate':
+        if self.command.get_template() == 'TextMessage':
             self.template = TextTemplate(self.command).get()
         elif self.command.get_template() == 'ImageMessage':
             self.template = ImageMessage(self.command).get()
@@ -19,9 +19,6 @@ class MessageTemplateFactory():
             self.template = StickerMessage(self.command).get()
         elif self.command.get_template() == 'TemplateMessage':
             self.template = TemplateMessage(self.command).get()
-        else:
-            self.command = Command(
-                self.event, 'commandDefault', 'TextTemplate')
 
     def get(self):
         return self.template

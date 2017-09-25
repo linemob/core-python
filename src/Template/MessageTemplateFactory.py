@@ -3,6 +3,7 @@ from .ImageMessage import ImageMessage
 from .LocationMessage import LocationMessage
 from .StickerMessage import StickerMessage
 from .TemplateMessage import TemplateMessage
+from .ImagemapMessage import ImagemapMessage
 
 
 class MessageTemplateFactory():
@@ -20,7 +21,7 @@ class MessageTemplateFactory():
         elif self.command.get_template() == 'TemplateMessage':
             self.template = TemplateMessage(self.command).get()
         elif self.command.get_template() == 'ImagemapMessage':
-            self.template = TemplateMessage(self.command).get()
+            self.template = ImagemapMessage(self.command).get()
 
     def get(self):
         return self.template

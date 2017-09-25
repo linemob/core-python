@@ -46,11 +46,6 @@ class CommandRegistry():
             self.command = Command(self.event, 'command6', 'TemplateMessage')
         elif text == '7':
             self.command = Command(self.event, 'command7', 'TemplateMessage')
-        elif text == '8':
-            pass
-        elif text == '9':
-            self.command = Command(
-                self.event, 'command9', 'ImagemapMessage')
         else:
             self.command = Command(
                 self.event, 'commandDefault', 'TextMessage')

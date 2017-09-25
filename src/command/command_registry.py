@@ -53,7 +53,7 @@ class CommandRegistry():
                 self.event, 'command9', 'TemplateMessage')
         else:
             self.command = Command(
-                self.event, 'commandDefault', 'TextTemplate')
+                self.event, 'commandDefault', 'TextMessage')
 
     def set_sticker_message_command(self):
         pass

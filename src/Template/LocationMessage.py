@@ -9,7 +9,7 @@ class LocationMessage():
         self.title = command.get_message()['title']
         self.address = command.get_message()['address']
         self.latitude = command.get_message()['latitude']
-        self.longtitude = command.get_message()['longtitude']
+        self.longitude = command.get_message()['longitude']
 
     def get(self):
-        return LocationSendMessage(self.title, self.address, self.latitude, self.longtitude)
+        return LocationSendMessage(self.title, self.address, self.latitude, self.longitude)

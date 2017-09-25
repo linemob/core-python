@@ -8,5 +8,5 @@ class StickerMessageMiddleware():
 
     def execute(self, command):
         if(command.get_command() == 'command4'):
-            command.set_message({'package_id'='1',
-                                 'sticker_id'='1'})
+            command.set_message({'package_id':'1',
+                                 'sticker_id':'1'})

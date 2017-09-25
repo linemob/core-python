@@ -12,4 +12,4 @@ class ImagemapMessage():
         self.actions = command.get_message()['actions']
 
     def get(self):
-        return LocationSendMessage(self.base_url, self.alt_text, self.base_size, self.actions)
+        return ImagemapSendMessage(self.base_url, self.alt_text, self.base_size, self.actions)

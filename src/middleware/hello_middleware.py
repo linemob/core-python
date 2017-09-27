@@ -13,4 +13,5 @@ class HelloMiddleware(Middleware):
             command.set_message('Hello! World')
             command.set_template('TextMessage')
             print('command.get_command() == self.middleware_command')
-            print(command.get_message())
+            print('hellomiddleware message:' + command.get_message())
+            print('hellomiddleware template:' + command.get_template())

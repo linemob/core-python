@@ -33,8 +33,8 @@ class CommandRegistry():
             command.set_event(self.event)
             if command.isValidCmd():
                 return command
-        default_command.set_event(self.event)
-        return default_command
+        self.default_command.set_event(self.event)
+        return self.default_command
 
     def get_sticker_message_command(self):
         pass

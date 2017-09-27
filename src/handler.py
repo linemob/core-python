@@ -9,7 +9,9 @@ class Handler():
 
     def __init__(self, command):
         self.command = command
-        self.template = MessageTemplateFactory(command).get()
+        print('Handler template:'+self.command.template)
+        print('Handler message:'+self.command.message)
+        self.template = MessageTemplateFactory(self.command).get()
         self.sendMessage()
 
     def sendMessage(self):

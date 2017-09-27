@@ -38,4 +38,6 @@ class CommandBus():
             middleware.execute(self.command)
             if(not middleware.next()):
                 break
+        print('Commandbus template:' + self.command.template)
+        print('Commandbus message:' + self.command.message)
         handler = Handler(self.command)

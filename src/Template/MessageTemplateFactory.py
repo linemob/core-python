@@ -9,8 +9,8 @@ class MessageTemplateFactory():
 
     def __init__(self, command):
         self.command = command
-        print('MessageTemplateFactory template:'+self.command.get_template())
-        print('MessageTemplateFactory message:'+self.command.get_message())
+        print('MessageTemplateFactory template:' + self.command.get_template())
+        print('MessageTemplateFactory message:' + self.command.get_message())
         if self.command.get_template() == 'TextMessage':
             self.template = TextTemplate(self.command).get()
         elif self.command.get_template() == 'ImageMessage':

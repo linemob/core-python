@@ -12,7 +12,6 @@ class CarouselTemplateMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
-            print('in CarouselTemplateMiddleware ')
             command.set_message({'alt_text': 'Carousel template',
                                  'template': CarouselTemplate(
                                      columns=[
@@ -60,4 +59,4 @@ class CarouselTemplateMiddleware(Middleware):
                                  )
 
                                  })
-            command.set_template('TemplateMessage')
+            command.set_template('TemplateMessageCarouselTemplateMiddleware')

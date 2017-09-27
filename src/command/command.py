@@ -19,7 +19,6 @@ class Command():
         return self.command
 
     def set_template(self, template):
-        print('set template in command: ' + template)
         self.template = template
 
     def get_template(self):

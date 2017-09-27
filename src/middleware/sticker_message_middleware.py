@@ -9,7 +9,6 @@ class StickerMessageMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
-            print('in StickerMessageMiddleware ')
             command.set_message({'package_id': '1',
                                  'sticker_id': '1'})
             command.set_template('StickerMessage')

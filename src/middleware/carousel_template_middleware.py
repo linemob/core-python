@@ -59,4 +59,4 @@ class CarouselTemplateMiddleware(Middleware):
                                  )
 
                                  })
-            command.set_template('TemplateMessageCarouselTemplateMiddleware')
+            command.set_template('TemplateMessage')

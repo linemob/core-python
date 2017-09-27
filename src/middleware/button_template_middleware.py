@@ -34,4 +34,4 @@ class ButtonTemplateMiddleware(Middleware):
                                      ]
                                  )
                                  })
-        command.set_template('TemplateMessageButtonTemplateMiddleware')
+            command.set_template('TemplateMessage')

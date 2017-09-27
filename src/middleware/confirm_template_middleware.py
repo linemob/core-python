@@ -28,4 +28,4 @@ class ConfirmTemplateMiddleware(Middleware):
                                      ]
                                  )
                                  })
-            command.set_template('TemplateMessageConfirmTemplateMiddleware')
+            command.set_template('TemplateMessage')

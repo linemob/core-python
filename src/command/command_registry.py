@@ -32,8 +32,10 @@ class CommandRegistry():
         for command in self.command_list:
             command.set_event(self.event)
             if command.isValidCmd():
+                print ('return valid command')
                 return command
         self.default_command.set_event(self.event)
+        print ('return default command')
         return self.default_command
 
     def get_sticker_message_command(self):

@@ -1,7 +1,10 @@
 class Command():
 
     def __init__(self):
-        pass
+        self.event = None
+        self.command = None
+        self.template = None
+        self.message = None
 
     def set_event(self, event):
         self.event = event

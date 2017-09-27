@@ -8,15 +8,16 @@ class CommandRegistry():
 
     def __init__(self, event):
         self.event = event
-        self.command = None
+        self.default_command = None
+        self.command_list = list()
         self.check()
 
-    def get_command(self):
-        return self.command
+    def add_command(self, command):
+        self.command_list.append(command)
 
-    def check(self):
+    def get_command(self):
         if isinstance(self.event.message, TextMessage):
-            self.set_text_message_command()
+            self.get_text_message_command()
         elif isinstance(self.event.message, StickerMessage):
             pass
         elif isinstance(self.event.message, LocationMessage):
@@ -27,43 +28,32 @@ class CommandRegistry():
             pass
         elif isinstance(self.event.message, AudioMessage):
             pass
-        else:
-            self.set_default_message_command()
 
-    def set_text_message_command(self):
-        text = self.event.message.text
-        if text == '1':
-            self.command = Command(self.event, 'command1', 'TextMessage')
-        elif text == '2':
-            self.command = Command(self.event, 'command2', 'ImageMessage')
-        elif text == '3':
-            self.command = Command(self.event, 'command3', 'LocationMessage')
-        elif text == '4':
-            self.command = Command(self.event, 'command4', 'StickerMessage')
-        elif text == '5':
-            self.command = Command(self.event, 'command5', 'TemplateMessage')
-        elif text == '6':
-            self.command = Command(self.event, 'command6', 'TemplateMessage')
-        elif text == '7':
-            self.command = Command(self.event, 'command7', 'TemplateMessage')
-        else:
-            self.command = Command(
-                self.event, 'commandDefault', 'TextMessage')
+    def get_text_message_command(self):
+        for command in self.command_list:
+            command.set_event(self.event)
+            if command.isValidCmd():
+                return command
+        default_command.set_event(self.event)
+        return default_command
 
-    def set_sticker_message_command(self):
+    def get_sticker_message_command(self):
         pass
 
-    def set_location_message_command(self):
+    def get_location_message_command(self):
         pass
 
-    def set_image_message_command(self):
+    def get_image_message_command(self):
         pass
 
-    def set_video_message_command(self):
+    def get_video_message_command(self):
         pass
 
-    def set_audio_message_command(self):
+    def get_audio_message_command(self):
         pass
 
-    def set_default_message_command(self):
-        self.command.set('default')
+    def set_default_command(self, default_command):
+        self.default_command = default_command
+
+    def get_default_command(self):
+        return default_command

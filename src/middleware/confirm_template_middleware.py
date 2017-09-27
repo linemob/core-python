@@ -8,9 +8,10 @@ class ConfirmTemplateMiddleware(Middleware):
 
     def __init__(self):
         self.do_next = True
+        self.middleware_command = '5'
 
     def execute(self, command):
-        if(command.get_command() == 'command5'):
+        if(command.get_command() == self.middleware_command):
             command.set_message({'alt_text': 	'Confirm template',
                                  'template': 	ConfirmTemplate(
                                      text='Are you sure?',
@@ -27,3 +28,4 @@ class ConfirmTemplateMiddleware(Middleware):
                                      ]
                                  )
                                  })
+            command.set_template('TemplateMessage')

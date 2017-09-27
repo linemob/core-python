@@ -8,9 +8,10 @@ class CarouselTemplateMiddleware(Middleware):
 
     def __init__(self):
         self.do_next = True
+        self.middleware_command = '7'
 
     def execute(self, command):
-        if(command.get_command() == 'command7'):
+        if(command.get_command() == self.middleware_command):
             command.set_message({'alt_text': 'Carousel template',
                                  'template': CarouselTemplate(
                                      columns=[
@@ -58,3 +59,4 @@ class CarouselTemplateMiddleware(Middleware):
                                  )
 
                                  })
+            command.set_template('TemplateMessage')

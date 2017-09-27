@@ -1,10 +1,13 @@
 class Command():
 
-    def __init__(self, event, command, template):
+    def __init__(self):
+        pass
+
+    def set_event(selt, event):
         self.event = event
-        self.command = command
-        self.template = template
-        self.message = None
+
+    def get_event(self):
+        return self.event
 
     def set_command(selt, command):
         self.command = command
@@ -23,3 +26,6 @@ class Command():
 
     def get_message(self):
         return self.message
+
+    def isisValidCmd(self):
+        raise NotImplementedError("Please Implement this method")

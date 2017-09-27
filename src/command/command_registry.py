@@ -9,7 +9,6 @@ class CommandRegistry():
 
     def __init__(self, event):
         self.event = event
-        self.default_command = None
         self.command_list = list()
 
     def add_command(self, command):
@@ -34,6 +33,7 @@ class CommandRegistry():
             command.set_event(self.event)
             if isinstance(command, CommandDefault):
                 print('default command')
+                print('get command :' + command.get_command())
                 return command
             if command.isValidCmd():
                 print('return valid command')
@@ -53,9 +53,3 @@ class CommandRegistry():
 
     def get_audio_message_command(self):
         pass
-
-    def set_default_command(self, default_command):
-        self.default_command = default_command
-
-    def get_default_command(self):
-        return default_command

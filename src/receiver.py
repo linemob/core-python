@@ -9,6 +9,7 @@ from .command.command7 import Command7
 from .command.commandDefault import CommandDefault
 from .command_bus import CommandBus
 
+
 class Receiver():
 
     def __init__(self, event):
@@ -21,6 +22,5 @@ class Receiver():
         command_registry.add_command(Command5())
         command_registry.add_command(Command6())
         command_registry.add_command(Command7())
-        command_registry.set_default_command(CommandDefault())
-        command = command_registry.get_command()
-        command_bus = CommandBus(command)
+        command_registry.add_command(CommandDefault())
+        command_bus = CommandBus(command_registry.get_command())

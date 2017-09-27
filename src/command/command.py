@@ -3,7 +3,7 @@ class Command():
     def __init__(self):
         pass
 
-    def set_event(selt, event):
+    def set_event(self, event):
         self.event = event
 
     def get_event(self):

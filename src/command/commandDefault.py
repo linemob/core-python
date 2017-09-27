@@ -9,5 +9,5 @@ class CommandDefault(Command):
         self.template = None
         self.message = None
 
-    def isisValidCmd(self):
+    def isValidCmd(self):
         return self.event.message.text == self.command

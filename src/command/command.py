@@ -27,5 +27,5 @@ class Command():
     def get_message(self):
         return self.message
 
-    def isisValidCmd(self):
+    def isValidCmd(self):
         raise NotImplementedError("Please Implement this method")

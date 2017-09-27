@@ -35,7 +35,11 @@ class CommandRegistry():
                 print ('return valid command')
                 return command
         self.default_command.set_event(self.event)
-        print ('return default command')
+        if(self.default_command == None):
+            print ('default command is None!')
+        else:
+            print ('default command Not None!')
+        
         return self.default_command
 
     def get_sticker_message_command(self):

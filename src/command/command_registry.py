@@ -30,10 +30,10 @@ class CommandRegistry():
 
     def get_text_message_command(self):
         for command in self.command_list:
+            print('get command :' + command.get_command())
             command.set_event(self.event)
             if isinstance(command, CommandDefault):
                 print('default command')
-                print('get command :' + command.get_command())
                 return command
             if command.isValidCmd():
                 print('return valid command')

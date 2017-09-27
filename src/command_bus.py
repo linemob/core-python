@@ -13,6 +13,7 @@ class CommandBus():
 
     def __init__(self, command):
         self.command = command
+        print ('get command in commandBus:'+self.command.get_command())
         self.middleware = list()
         self.initial()
         self.run()

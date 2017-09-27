@@ -35,7 +35,6 @@ class CommandBus():
 
     def run(self):
         for middleware in self.middleware:
-            print('middlewareCommand:'+middleware.middleware_command)
             middleware.execute(self.command)
             if(not middleware.next()):
                 break

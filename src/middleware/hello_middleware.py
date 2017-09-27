@@ -10,7 +10,6 @@ class HelloMiddleware(Middleware):
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
             command.set_message('Hello! World!!')
-            command.set_template('TextMessage')
-            print('command.get_command() == self.middleware_command')
+            command.set_template('TextMessageNAAA')
             print('hellomiddleware message:' + command.get_message())
             print('hellomiddleware template:' + command.get_template())

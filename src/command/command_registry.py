@@ -2,6 +2,7 @@ from linebot.models import (
     TextMessage, StickerMessage, LocationMessage, ImageMessage, VideoMessage, AudioMessage
 )
 from .command import Command
+from .commandDefault import CommandDefault
 
 
 class CommandRegistry():
@@ -31,16 +32,12 @@ class CommandRegistry():
     def get_text_message_command(self):
         for command in self.command_list:
             command.set_event(self.event)
-            if command.isValidCmd():
-                print ('return valid command')
+            if isinstance(command, CommandDefault):
+                print('default command')
                 return command
-        self.default_command.set_event(self.event)
-        if(self.default_command == None):
-            print ('default command is None!')
-        else:
-            print ('default command Not None!')
-        
-        return self.default_command
+            if command.isValidCmd():
+                print('return valid command')
+                return command
 
     def get_sticker_message_command(self):
         pass

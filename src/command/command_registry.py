@@ -10,7 +10,6 @@ class CommandRegistry():
         self.event = event
         self.default_command = None
         self.command_list = list()
-        self.check()
 
     def add_command(self, command):
         self.command_list.append(command)

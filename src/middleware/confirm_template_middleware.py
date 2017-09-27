@@ -12,6 +12,7 @@ class ConfirmTemplateMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
+            print('in ConfirmTemplateMiddleware ')
             command.set_message({'alt_text': 	'Confirm template',
                                  'template': 	ConfirmTemplate(
                                      text='Are you sure?',

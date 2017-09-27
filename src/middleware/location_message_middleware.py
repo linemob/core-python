@@ -9,6 +9,7 @@ class LocationMessageMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
+            print('in LocationMessageMiddleware ')
             command.set_message({'title': 'my location',
                                  'address': 'Tokyo',
                                  'latitude': '35.65910807942215',

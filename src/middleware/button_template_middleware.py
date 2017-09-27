@@ -12,6 +12,7 @@ class ButtonTemplateMiddleware(Middleware):
 
     def execute(self, command):
         if(command.get_command() == self.middleware_command):
+            print('in ButtonTemplateMiddleware ')
             command.set_message({'alt_text': 'Buttons template',
                                  'template': ButtonsTemplate(
                                      thumbnail_image_url='https://example.com/image.jpg',

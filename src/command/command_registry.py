@@ -16,7 +16,7 @@ class CommandRegistry():
 
     def get_command(self):
         if isinstance(self.event.message, TextMessage):
-            self.get_text_message_command()
+            return self.get_text_message_command()
         elif isinstance(self.event.message, StickerMessage):
             pass
         elif isinstance(self.event.message, LocationMessage):
@@ -30,13 +30,10 @@ class CommandRegistry():
 
     def get_text_message_command(self):
         for command in self.command_list:
-            print('get command :' + command.get_command())
             command.set_event(self.event)
             if isinstance(command, CommandDefault):
-                print('default command')
                 return command
             if command.isValidCmd():
-                print('return valid command')
                 return command
 
     def get_sticker_message_command(self):
